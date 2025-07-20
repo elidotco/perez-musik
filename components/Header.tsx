@@ -18,12 +18,16 @@ const Header = () => {
       path: "#",
     },
     {
+      name: "Music",
+      path: "#",
+    },
+    {
       name: "Contact",
       path: "#",
     },
   ];
   return (
-    <header className="w-full h-20 bg-white sticky top-0 shadow px-5 md:px-10 lg:px-16 flex items-center lg:gap-x-56 justify-between lg:justify-center 2xl:px-20">
+    <header className="w-full z-50 h-20 bg-white sticky top-0 shadow px-0 md:px-10 lg:px-16 flex items-center lg:gap-x-56 justify-between lg:justify-center 2xl:px-20">
       {/* the Logo fo the header */}
       <div className="w-28 h-28 ">
         <a href="/">
@@ -34,7 +38,7 @@ const Header = () => {
 
       {/* the Logo fo the header */}
       {/* Menu */}
-      <ul className="flex gap-6">
+      <ul className="md:flex hidden gap-6">
         {menu.map((item) => {
           return (
             <li key={item.name} className="cursor-pointer relative group ">
@@ -48,7 +52,7 @@ const Header = () => {
         })}
       </ul>
       {/* Play button */}
-      <div className="p-1.5 shadow cursor-pointer shadow-black bg-black rounded-full flex justify-center transition-all transform hover:scale-105 items-center">
+      <div className="p-1.5 shadow hidden cursor-pointer shadow-black bg-black rounded-full md:flex justify-center transition-all transform hover:scale-105 items-center">
         <PlayIcon fontSize={20} color="white" className="w-7" />
       </div>
     </header>

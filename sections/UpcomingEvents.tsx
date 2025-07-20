@@ -4,7 +4,7 @@ const UpcomingEvents = () => {
   return (
     <div>
       {" "}
-      <section className="py-20 bg-black-alt text-white">
+      <section className="py-20 bg-fixed bg-black-alt text-white">
         <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 2xl:px-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
