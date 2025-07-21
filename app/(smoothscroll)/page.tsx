@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </div>
       <Album />
-      {/* <UpcomingEvents /> */}
+      <UpcomingEvents />
     </main>
   );
 }
