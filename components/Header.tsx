@@ -11,19 +11,19 @@ const Header = () => {
     },
     {
       name: "About",
-      path: "#",
+      path: "/about",
     },
     {
       name: "Events",
-      path: "#",
+      path: "/events",
     },
     {
       name: "Music",
-      path: "#",
+      path: "/music",
     },
     {
       name: "Contact",
-      path: "#",
+      path: "/contact",
     },
   ];
   return (
@@ -42,7 +42,7 @@ const Header = () => {
         {menu.map((item) => {
           return (
             <li key={item.name} className="cursor-pointer relative group ">
-              <a href="#" className="relative">
+              <a href={item.path} className="relative">
                 {" "}
                 {item.name}
               </a>
