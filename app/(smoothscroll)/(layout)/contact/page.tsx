@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function Home() {
@@ -50,20 +51,18 @@ export default function Home() {
     <main className="bg-fixed min-h-screen">
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
         {/* Header */}
-        <header className="bg-white shadow-sm">
-          <div className="max-w-6xl mx-auto px-6 py-4">
-            <div className="flex items-center">
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
-                <span className="text-black font-bold text-lg">♪</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Perez Musik</h1>
-                <p className="text-sm text-gray-600">Get in Touch</p>
-              </div>
-            </div>
-          </div>
-        </header>
-
+        <div className="flex w-full relative bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-96">
+          <div className="absolute  inset-0 bg-gradient-to-b from-yellow-400 to-black opacity-50"></div>
+          {/* <Image
+            src="/tt.jpg"
+            alt="bottom pattern"
+            width={1920}
+            height={400}
+            className="w-full h-full object-cover"
+            quality={100}
+            priority
+          /> */}
+        </div>
         <main className="max-w-6xl mx-auto px-6 py-12">
           {/* Hero Section */}
           <div className="text-center mb-12">
@@ -79,7 +78,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Contact Form - Takes 2 columns */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-3">
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   Send a Message
@@ -232,142 +231,8 @@ export default function Home() {
             </div>
 
             {/* Sidebar - Takes 1 column */}
-            <div className="space-y-6">
-              {/* Contact Details Card */}
-              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-6 text-white">
-                <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 mr-3 mt-1 flex-shrink-0">📧</div>
-                    <div>
-                      <p className="font-semibold text-sm">Email</p>
-                      <p className="opacity-90 text-sm">
-                        booking@perezmusik.com
-                      </p>
-                      <p className="opacity-90 text-sm">info@perezmusik.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 mr-3 mt-1 flex-shrink-0">📱</div>
-                    <div>
-                      <p className="font-semibold text-sm">Phone</p>
-                      <p className="opacity-90 text-sm">+233 XX XXX XXXX</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 mr-3 mt-1 flex-shrink-0">📍</div>
-                    <div>
-                      <p className="font-semibold text-sm">Location</p>
-                      <p className="opacity-90 text-sm">Accra, Ghana</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Media Card */}
-              <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Follow the Ministry
-                </h3>
-
-                <div className="space-y-3">
-                  <a
-                    href="#"
-                    className="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group"
-                  >
-                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                      <span className="text-white text-xs font-bold">f</span>
-                    </div>
-                    <span className="text-blue-600 font-medium text-sm">
-                      Facebook
-                    </span>
-                  </a>
-
-                  <a
-                    href="#"
-                    className="flex items-center p-3 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors group"
-                  >
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                      <span className="text-white text-xs">📷</span>
-                    </div>
-                    <span className="text-pink-600 font-medium text-sm">
-                      Instagram
-                    </span>
-                  </a>
-
-                  <a
-                    href="#"
-                    className="flex items-center p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors group"
-                  >
-                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                      <span className="text-white text-xs">▶</span>
-                    </div>
-                    <span className="text-red-600 font-medium text-sm">
-                      YouTube
-                    </span>
-                  </a>
-
-                  <a
-                    href="#"
-                    className="flex items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group"
-                  >
-                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                      <span className="text-white text-xs">♪</span>
-                    </div>
-                    <span className="text-green-600 font-medium text-sm">
-                      Spotify
-                    </span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Response Time Card */}
-              <div className="bg-gray-900 rounded-2xl p-6 text-white">
-                <h3 className="text-lg font-bold mb-3">Response Time</h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  We typically respond to all inquiries within 24-48 hours.
-                </p>
-
-                <div className="border-t border-gray-700 pt-4">
-                  <p className="text-xs text-gray-400">
-                    For urgent booking inquiries, please call directly or
-                    mention "URGENT" in your subject line.
-                  </p>
-                </div>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  Ministry Impact
-                </h3>
-
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="bg-yellow-50 rounded-lg p-3">
-                    <div className="text-2xl font-bold text-yellow-600">
-                      500+
-                    </div>
-                    <div className="text-xs text-gray-600">Events</div>
-                  </div>
-                  <div className="bg-orange-50 rounded-lg p-3">
-                    <div className="text-2xl font-bold text-orange-600">
-                      10K+
-                    </div>
-                    <div className="text-xs text-gray-600">Lives Touched</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </main>
-
-        {/* Floating Elements */}
-        <div className="fixed top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full opacity-20 animate-bounce"></div>
-        <div className="fixed top-40 right-20 w-6 h-6 bg-orange-400 rounded-full opacity-20 animate-pulse"></div>
-        <div className="fixed bottom-20 left-20 w-5 h-5 bg-yellow-300 rounded-full opacity-20 animate-ping"></div>
       </div>
     </main>
   );
