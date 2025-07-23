@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <section className="min-h-screen">Home</section>;
 };
 
 export default Home;
