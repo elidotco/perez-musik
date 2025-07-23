@@ -4,7 +4,7 @@ const AlbumShowcase = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br  p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col items-center md:items-start md:flex-row gap-10">
           {/* Album Cover Section */}
           <div className="w-3/4">
             <Image

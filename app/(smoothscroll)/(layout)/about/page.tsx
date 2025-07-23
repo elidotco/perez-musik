@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <section className="min-h-screen   w-full">
       {/* About Section */}
-      <div className="flex w-full justify-center  h-auto">
-        <div className="w-1/3">
+      <div className="flex w-full justify-center md:flex-row flex-col-reverse  h-auto">
+        <div className="md:w-1/3 w-full">
           <Image
             src="/about.jpg"
             alt="image"
@@ -16,7 +16,7 @@ const Home = () => {
           />
         </div>
 
-        <div className="w-1/2 flex flex-col py-10 pl-10 gap-y-10 ">
+        <div className="w-full  md:w-1/2 flex flex-col py-10 pl-10 gap-y-10 ">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
           reprehenderit iste illo repellendus at nesciunt voluptate
           necessitatibus nam perspiciatis. Nam nulla quas iste! Quaerat
