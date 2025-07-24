@@ -6,7 +6,7 @@ import React from "react";
 const RELEASES_QUERY = defineQuery(
   `*[
   _type=="releases" 
-  ]|order(date desc) {coverImage, comments, title,date, type}`
+  ]|order(date desc) {coverImage, comments, title,date, type, spotify}`
 );
 const Home = async () => {
   const { data } = await sanityFetch({ query: RELEASES_QUERY });

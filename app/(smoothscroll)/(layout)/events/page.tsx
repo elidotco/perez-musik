@@ -5,7 +5,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import Image from "next/image";
 import { urlFor } from "../../../../sanity/lib/image";
 
-function formatTime(datetime) {
+function formatTime(datetime: string | number | Date) {
   return new Date(datetime).toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
@@ -14,8 +14,12 @@ function formatTime(datetime) {
 }
 
 type Event = {
+  Venue: string;
+  name: string;
+  Location: string;
+  coverImage: any;
   id: number;
-  date: { day: string; month: string };
+  date: string | number | Date;
   title: string;
   location: string;
   venue: string;
@@ -32,15 +36,28 @@ const EventsSection = async () => {
   console.log(data);
   const now = new Date();
   const upcomingEvents: Event[] = data.filter(
-    (event) => new Date(event.date) > new Date()
+    (event: { date: string | number | Date }) =>
+      new Date(event.date) > new Date()
   );
 
   console.log(upcomingEvents);
   console.log(upcomingEvents);
   const pastEvents: Event[] = data.filter(
-    (event) => new Date(event.date) < new Date()
+    (event: { date: string | number | Date }) =>
+      new Date(event.date) < new Date()
   );
 
+  const formatEventDate = (datetime: string | number | Date) => {
+    const date = new Date(datetime);
+    if (isNaN(date.getTime())) {
+      return { day: "--", month: "N/A" };
+    }
+
+    return {
+      day: date.getDate(),
+      month: date.toLocaleDateString("en-US", { month: "short" }),
+    };
+  };
   const EventCard = ({
     event,
     isPast = false,
@@ -51,9 +68,12 @@ const EventsSection = async () => {
     <div className="flex items-center flex-col md:flex-row gap-5 space-x-6 p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
       {/* Date */}
       <div className="text-center flex-shrink-0">
-        <div className="text-3xl font-bold text-gray-800">{event.date.day}</div>
+        <div className="text-3xl font-bold text-gray-800">
+          {" "}
+          {formatEventDate(event.date).day}
+        </div>
         <div className="text-sm text-gray-600 font-medium">
-          {event.date.month}
+          {formatEventDate(event.date).month}
         </div>
       </div>
 

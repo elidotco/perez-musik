@@ -18,7 +18,7 @@ const AlbumShowcase = ({ data }) => {
           </div>
 
           {/* Album Info and Player Section */}
-          <div className="space-y-8   bg-gray-100 py-10 px-16 ">
+          <div className="space-y-8   bg-gray-100 py-10 md:px-16 ">
             {/* Album Title */}
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -33,7 +33,7 @@ const AlbumShowcase = ({ data }) => {
               <iframe
                 data-testid="embed-iframe"
                 style={{}}
-                src="https://open.spotify.com/embed/album/5oY5TTJsroVfIVlM42dUM8?utm_source=generator"
+                src={data.spotify}
                 width="100%"
                 height="352"
                 frameBorder="0"

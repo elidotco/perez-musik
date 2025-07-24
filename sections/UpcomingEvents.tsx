@@ -23,7 +23,7 @@ const UpcomingEvents = ({ data }) => {
           </div>
           <div className="mx-auto py-10 w-full items-center justify-center  flex">
             <button className="border-2 border-black hover:bg-black hover:text-white cursor-pointer text-black font-bold py-4 px-8 rounded-full capitalize transition-all">
-              View Past Events
+              View All Events
             </button>
           </div>
         </div>

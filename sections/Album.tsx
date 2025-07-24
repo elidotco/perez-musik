@@ -1,5 +1,6 @@
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Album = ({ data }) => {
@@ -20,9 +21,12 @@ const Album = ({ data }) => {
           Latest {data.type}: <span>{data.title}</span>
         </h2>
         <p className="text-lg">{data.comments}</p>
-        <button className="border-2 border-black hover:bg-white hover:text-black w-1/2 md:w-1/4  cursor-pointer text-black font-bold py-4 px-2 rounded-full transition-all">
+        <Link
+          href="/music"
+          className="border-2 border-black hover:bg-white hover:text-black w-1/2 md:w-1/4 text-center cursor-pointer text-black font-bold py-4 px-2 rounded-full transition-all"
+        >
           All Releases
-        </button>
+        </Link>
       </div>
     </div>
   );

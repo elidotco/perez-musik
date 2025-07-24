@@ -4,6 +4,7 @@ import { Album, HeroSection, UpcomingEvents } from "@/sections";
 
 import { defineQuery } from "next-sanity";
 import { sanityFetch } from "@/sanity/lib/live";
+import Link from "next/link";
 const EVENTS_QUERY = defineQuery(
   `*[
   _type=="events" && date > now()
@@ -44,9 +45,12 @@ export default async function Home() {
             throughout the African diaspora.
           </h2>
 
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg py-4 px-8 w-fit rounded-full transition-all transform hover:scale-105 cursor-pointer">
+          <Link
+            href="/about"
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg py-4 px-8 w-fit rounded-full transition-all transform hover:scale-105 cursor-pointer"
+          >
             More About Perez
-          </button>
+          </Link>
         </div>
       </div>
       <Album data={releases.data} />
