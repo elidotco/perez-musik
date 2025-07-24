@@ -1,14 +1,16 @@
+import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
-const AlbumShowcase = () => {
+const AlbumShowcase = ({ data }) => {
+  console.log(data);
   return (
-    <div className="min-h-screen bg-gradient-to-br  p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br  p-4 md:px-10">
+      <div className=" w-full md:max-w-7xl md:mx-auto">
         <div className="flex flex-col items-center md:items-start md:flex-row gap-10">
           {/* Album Cover Section */}
-          <div className="w-3/4">
+          <div className="md:w-3/4">
             <Image
-              src="/breakthrough.jpg"
+              src={urlFor(data.coverImage).url()}
               alt="album covers"
               width={1980}
               height={1080}
@@ -16,19 +18,14 @@ const AlbumShowcase = () => {
           </div>
 
           {/* Album Info and Player Section */}
-          <div className="space-y-8 bg-gray-100 py-10 px-16">
+          <div className="space-y-8   bg-gray-100 py-10 px-16 ">
             {/* Album Title */}
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">
-                Latest Album: BreakThrough
+                {data.type}: {data.title}
               </h1>
-              <p className="text-xl text-gray-600 mb-4">2024</p>
-              <p className="text-gray-700 leading-relaxed">
-                This 14-track album announces God's focus on the harvest of
-                souls while encouraging believers to heed the Great Commission.
-                As you listen, go forth in boldness and in the assurance of a
-                harvest.
-              </p>
+              <p className="text-xl text-gray-600 mb-4">{data.date}</p>
+              <p className="text-gray-700 leading-relaxed">{data.comments}</p>
             </div>
 
             {/* Spotify Player Interface */}

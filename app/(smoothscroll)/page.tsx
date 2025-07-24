@@ -12,7 +12,7 @@ const EVENTS_QUERY = defineQuery(
 const RELEASES_QUERY = defineQuery(
   `*[
   _type=="releases" 
-  ]|order(date desc)[0] {coverImage, comments, title,date}`
+  ]|order(date desc)[0] {coverImage, comments, title,date, type}`
 );
 
 export default async function Home() {

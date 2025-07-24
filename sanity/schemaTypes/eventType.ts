@@ -16,10 +16,16 @@ export const eventType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "Venue",
+      type: "string",
+    }),
+
+    defineField({
       name: "date",
-      type: "date",
+      type: "datetime",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "coverImage",
       type: "image",
