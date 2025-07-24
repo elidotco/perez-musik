@@ -1,8 +1,30 @@
 import Image from "next/image";
 import React from "react";
 import { urlFor } from "../sanity/lib/image";
-
-const UpcomingEvents = ({ data }) => {
+export interface UpEProps {
+  data: {
+    coverImage: {
+      _type: "image";
+      asset: {
+        _ref: string;
+        _type: "reference";
+      };
+      hotspot?: {
+        x: number;
+        y: number;
+        height: number;
+        width: number;
+      };
+      crop?: {
+        top: number;
+        bottom: number;
+        left: number;
+        right: number;
+      };
+    };
+  }[];
+}
+const UpcomingEvents: React.FC<UpEProps> = ({ data }) => {
   return (
     <div>
       {" "}

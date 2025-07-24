@@ -1,7 +1,38 @@
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
-const AlbumShowcase = ({ data }) => {
+export interface AlbumData {
+  coverImage: {
+    _type: "image";
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+    // Additional optional properties that Sanity images might have
+    hotspot?: {
+      x: number;
+      y: number;
+      height: number;
+      width: number;
+    };
+    crop?: {
+      top: number;
+      bottom: number;
+      left: number;
+      right: number;
+    };
+  };
+  type: string;
+  title: string;
+  date: string;
+  comments: string;
+  spotify: string; // Spotify embed URL
+}
+export interface AlbumShowcaseProps {
+  data: AlbumData;
+}
+
+const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
   console.log(data);
   return (
     <div className="min-h-screen bg-gradient-to-br  p-4 md:px-10">

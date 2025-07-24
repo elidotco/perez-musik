@@ -2,8 +2,34 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+export interface AlbumProps {
+  data: {
+    coverImage: {
+      _type: "image";
+      asset: {
+        _ref: string;
+        _type: "reference";
+      };
+      hotspot?: {
+        x: number;
+        y: number;
+        height: number;
+        width: number;
+      };
+      crop?: {
+        top: number;
+        bottom: number;
+        left: number;
+        right: number;
+      };
+    };
+    type: string;
+    title: string;
+    comments: string;
+  };
+}
 
-const Album = ({ data }) => {
+const Album: React.FC<AlbumProps> = ({ data }) => {
   return (
     <div className=" gap-y-5 md:pl-10 lg:pl-16 2xl:pl-20 items-center flex flex-col md:flex-row py-20 ">
       {/* Latest Album */}

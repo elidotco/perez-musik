@@ -1,5 +1,7 @@
 import { AlbumShowcase } from "@/components";
+import { AlbumData, AlbumShowcaseProps } from "@/components/AlbumShowcase";
 import { sanityFetch } from "@/sanity/lib/live";
+import { AlbumProps } from "@/sections/Album";
 import { defineQuery } from "next-sanity";
 import React from "react";
 
@@ -17,7 +19,7 @@ const Home = async () => {
         <div className="absolute  inset-0 bg-gradient-to-b from-yellow-400 to-black opacity-50"></div>
       </div>
       {data.map((item: unknown, index: React.Key | null | undefined) => (
-        <AlbumShowcase key={index} data={item} />
+        <AlbumShowcase key={index} data={item as AlbumData} />
       ))}
       <div className="flex">{/* Image */}</div>
     </section>
