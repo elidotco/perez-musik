@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import { urlFor } from "../sanity/lib/image";
 
-const UpcomingEvents = () => {
+const UpcomingEvents = ({ data }) => {
   return (
     <div>
       {" "}
@@ -13,7 +14,7 @@ const UpcomingEvents = () => {
           </div>
           <div className="flex relative shadow rounded-sm">
             <Image
-              src="/upcomingevent1.jpg"
+              src={data ? urlFor(data[0].coverImage).url() : ""}
               alt="events coming up"
               height={600}
               width={450}

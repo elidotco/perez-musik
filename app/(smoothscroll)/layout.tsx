@@ -9,7 +9,6 @@ export default function RootLayout({
 }>) {
   const lenis = useLenis((lenis) => {
     // called every scroll
-    console.log(lenis);
   });
   return (
     <>

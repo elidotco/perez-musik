@@ -1,9 +1,26 @@
 import { Header } from "@/components";
 
 import { Album, HeroSection, UpcomingEvents } from "@/sections";
-import Image from "next/image";
 
-export default function Home() {
+import { defineQuery } from "next-sanity";
+import { sanityFetch } from "@/sanity/lib/live";
+const EVENTS_QUERY = defineQuery(
+  `*[
+  _type=="events" && date > now()
+  ] {coverImage}`
+);
+const RELEASES_QUERY = defineQuery(
+  `*[
+  _type=="releases" 
+  ]|order(date desc)[0] {coverImage, comments, title,date}`
+);
+
+export default async function Home() {
+  const [data, releases] = await Promise.all([
+    sanityFetch({ query: EVENTS_QUERY }),
+    sanityFetch({ query: RELEASES_QUERY }),
+  ]);
+  console.log(data.data, releases.data, "hello");
   return (
     <main className="bg-fixed">
       <HeroSection />
@@ -32,8 +49,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Album />
-      <UpcomingEvents />
+      <Album data={releases.data} />
+      <UpcomingEvents data={data.data} />
     </main>
   );
 }

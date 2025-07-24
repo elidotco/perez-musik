@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Album = () => {
+const Album = ({ data }) => {
   return (
     <div className=" gap-y-5 md:pl-10 lg:pl-16 2xl:pl-20 items-center flex flex-col md:flex-row py-20 ">
       {/* Latest Album */}
