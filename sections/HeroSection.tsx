@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section className="w-full h-fit">
       {/* this is the main image on the herosection */}
-      <div className="w-full min-h-screen flex px-4 py-10 items-start justify-end sm:px-5 md:px-10 lg:px-16 2xl:px-48 bg-fixed bg-[url(/heroimage.png)] bg-center md:bg-top flex-col text-white bg-cover bg-no-repeat relative">
+      <div className="w-full min-h-screen flex px-4 py-10 items-start justify-end sm:px-5 md:px-10 lg:px-16 2xl:px-48 md:bg-fixed bg-[url(/heroimage.png)] bg-center md:bg-top flex-col text-white bg-cover bg-no-repeat relative">
         <div className="absolute inset-0 bg-gradient-to-b from-white to-black opacity-50"></div>
         <div
           data-aos="fade-up"
