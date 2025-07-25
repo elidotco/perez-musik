@@ -34,7 +34,9 @@ export default function RootLayout({
         className={`${openSans.className} ${geistMono.variable} antialiased scroll-smooth`}
       >
         {children}
-        <Footer />
+        <div className="relative">
+          <Footer />
+        </div>
         <SanityLive />
       </body>
     </html>

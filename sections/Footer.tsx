@@ -15,16 +15,36 @@ const Footer = () => {
             Spreading God's Love Through Music
           </p>
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.instagram.com/perezmusik233/?hl=en"
+              className="text-gray-400 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Instagram
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.facebook.com/perezmusik233/"
+              className="text-gray-400 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Facebook
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.youtube.com/channel/UCOT2mB7DXLh65eT3L96iJvQ"
+              className="text-gray-400 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               YouTube
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://open.spotify.com/artist/0aoCkJnz41cyF84JmMISzI?si=0zzy_JBhRYu63oPOKMCJgg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white"
+            >
               Spotify
             </a>
           </div>
