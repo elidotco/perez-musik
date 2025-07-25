@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect } from "react";
 
 const HeroSection = () => {
@@ -38,12 +39,20 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base w-full sm:w-auto">
+            <Link
+              href={
+                "https://open.spotify.com/artist/0aoCkJnz41cyF84JmMISzI?si=0zzy_JBhRYu63oPOKMCJgg"
+              }
+              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base w-full sm:w-auto"
+            >
               Listen Now
-            </button>
-            <button className="border-2 border-white hover:bg-white hover:text-black cursor-pointer text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto">
+            </Link>
+            <Link
+              href="https://youtu.be/Zr8yfNWLuZ4?si=-UntuMFed375t5vq"
+              className="border-2 border-white hover:bg-white hover:text-black cursor-pointer text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto"
+            >
               Watch Latest Video
-            </button>
+            </Link>
           </div>
         </div>
       </div>
