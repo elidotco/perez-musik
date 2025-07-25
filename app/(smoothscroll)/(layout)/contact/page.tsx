@@ -22,29 +22,45 @@ export default function Home() {
     }));
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Honeypot protection
+    const botField = (e.target as any).botField?.value;
+    if (botField) {
+      // Bot detected
+      setIsSubmitting(false);
+      return;
+    }
 
-    console.log("Form submitted:", formData);
+    try {
+      const response = await fetch("https://formspree.io/f/mqalqqqe", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: new FormData(e.target as HTMLFormElement),
+      });
 
-    setShowSuccess(true);
+      if (response.ok) {
+        setShowSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+        setTimeout(() => setShowSuccess(false), 5000);
+      } else {
+        alert("There was a problem submitting your form.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+    }
+
     setIsSubmitting(false);
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-
-    // Hide success message after 5 seconds
-    setTimeout(() => setShowSuccess(false), 5000);
   };
 
   return (
@@ -84,7 +100,21 @@ export default function Home() {
                   Send a Message
                 </h3>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  onSubmit={handleSubmit}
+                  method="POST"
+                  noValidate
+                  className="space-y-6"
+                >
+                  {/* Honeypot Field (hidden from users) */}
+                  <input
+                    type="text"
+                    name="botField"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   {/* Name & Email Row */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -213,6 +243,19 @@ export default function Home() {
                       "Send Message"
                     )}
                   </button>
+
+                  {/* Success Message */}
+                  {showSuccess && (
+                    <div className="mt-6 p-4 bg-green-100 border border-green-300 rounded-lg animate-pulse">
+                      <div className="flex items-center">
+                        <div className="text-green-600 mr-2 text-xl">✓</div>
+                        <p className="text-green-800 font-medium">
+                          Thank you! Your message has been sent successfully.
+                          We'll get back to you soon.
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </form>
 
                 {/* Success Message */}

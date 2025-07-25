@@ -33,15 +33,13 @@ const EVENTS_QUERY = defineQuery(
 
 const EventsSection = async () => {
   const { data } = await sanityFetch({ query: EVENTS_QUERY });
-  console.log(data);
+
   const now = new Date();
   const upcomingEvents: Event[] = data.filter(
     (event: { date: string | number | Date }) =>
       new Date(event.date) > new Date()
   );
 
-  console.log(upcomingEvents);
-  console.log(upcomingEvents);
   const pastEvents: Event[] = data.filter(
     (event: { date: string | number | Date }) =>
       new Date(event.date) < new Date()

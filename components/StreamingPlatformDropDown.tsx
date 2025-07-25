@@ -95,7 +95,7 @@ const StreamingPlatformsDropdown = () => {
     url: any;
   }) => {
     // In a real app, you would navigate to the streaming platform
-    console.log(`Opening ${platform.name}: ${platform.url}`);
+
     window.open(platform.url, "_blank");
     setIsOpen(false);
   };

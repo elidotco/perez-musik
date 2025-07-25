@@ -21,7 +21,7 @@ export default async function Home() {
     sanityFetch({ query: EVENTS_QUERY }),
     sanityFetch({ query: RELEASES_QUERY }),
   ]);
-  console.log(data.data, releases.data, "hello");
+
   return (
     <main className="bg-fixed">
       <HeroSection />

@@ -33,7 +33,6 @@ export interface AlbumShowcaseProps {
 }
 
 const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
-  console.log(data);
   return (
     <div className="min-h-screen bg-gradient-to-br  p-4 md:px-10">
       <div className=" w-full md:max-w-7xl md:mx-auto">

@@ -12,7 +12,7 @@ const RELEASES_QUERY = defineQuery(
 );
 const Home = async () => {
   const { data } = await sanityFetch({ query: RELEASES_QUERY });
-  console.log(data);
+
   return (
     <section className="min-h-screen">
       <div className="flex mb-20 w-full relative bg-[url(/forground.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-96">
