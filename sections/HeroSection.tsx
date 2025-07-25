@@ -26,7 +26,7 @@ const HeroSection = () => {
               }
               rel="noopener noreferrer"
               target="_blank"
-              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base w-full sm:w-auto"
+              className="bg-yellow-300 hover:bg-yellow-500 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base w-full sm:w-auto"
             >
               Listen Now
             </Link>

@@ -27,7 +27,7 @@ export default async function Home() {
       <HeroSection />
       <Header />
       <div className="flex h-1/2 item-center flex-col lg:flex-row ">
-        <div className=" w-full lg:w-1/2 px-5 md:px-10 py-20 lg:px-16 2xl:px-26 bg-yellow-400 text-xl font-medium flex flex-col gap-y-6">
+        <div className=" w-full lg:w-1/2 px-5 md:px-10 py-20 lg:px-16 2xl:px-26 bg-yellow-300 text-xl font-medium flex flex-col gap-y-6">
           <h2>
             " Fear thou not; for I am with thee: be not dismayed; for I am thy
             God: I will strengthen thee; yea, I will help thee; yea, I will
@@ -47,7 +47,7 @@ export default async function Home() {
 
           <Link
             href="/about"
-            className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg py-4 px-8 w-fit rounded-full transition-all transform hover:scale-105 cursor-pointer"
+            className="bg-yellow-300 hover:bg-yellow-500 text-black font-bold text-lg py-4 px-8 w-fit rounded-full transition-all transform hover:scale-105 cursor-pointer"
           >
             More About Perez
           </Link>

@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`w-full z-50 h-20 bg-white ${isMobileMenuOpen ? "fixed" : "sticky"} top-0 shadow px-0 md:px-10 lg:px-16 flex items-center lg:gap-x-56 justify-between lg:justify-center 2xl:px-20`}
+        className={`w-full z-50 h-20  bg-black ${isMobileMenuOpen ? "fixed" : "sticky"} top-0 shadow px-0 md:px-10 lg:px-16 flex items-center lg:gap-x-56 justify-between lg:justify-center 2xl:px-20`}
       >
         {/* the Logo fo the header */}
         <div className="w-28 h-28 ">
