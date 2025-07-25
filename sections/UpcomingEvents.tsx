@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { urlFor } from "../sanity/lib/image";
+import Link from "next/link";
 export interface UpEProps {
   data: {
     coverImage: {
@@ -44,9 +45,12 @@ const UpcomingEvents: React.FC<UpEProps> = ({ data }) => {
             />
           </div>
           <div className="mx-auto py-10 w-full items-center justify-center  flex">
-            <button className="border-2 border-black hover:bg-black hover:text-white cursor-pointer text-black font-bold py-4 px-8 rounded-full capitalize transition-all">
+            <Link
+              href="/events"
+              className="border-2 border-black hover:bg-black hover:text-white cursor-pointer text-black font-bold py-4 px-8 rounded-full capitalize transition-all"
+            >
               View All Events
-            </button>
+            </Link>
           </div>
         </div>
       </section>
