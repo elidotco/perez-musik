@@ -1,18 +1,19 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
+import Slider from "@/components/Slider";
 
 const HeroSection = () => {
   return (
     <section className="w-full h-fit">
       {/* this is the main image on the herosection */}
-      <div className="w-full min-h-screen flex px-4 py-10 items-start justify-end sm:px-5 md:px-10 lg:px-16 2xl:px-48 md:bg-fixed bg-[url(/heroimg1.jpg)] bg-center  flex-col text-white bg-cover bg-no-repeat relative">
+      <div className="w-full min-h-screen flex  items-start justify-end  md:bg-fixed bg-[url(/heroimg1.jpg)] bg-center  flex-col text-white bg-cover bg-no-repeat relative">
         <div className="absolute inset-0 bg-gradient-to-b from-green-300 to-black opacity-50"></div>
         <div
           data-aos="fade-up"
-          className="z-10 flex flex-col gap-y-6 md:gap-y-10 w-full max-w-full"
+          className="z-10 flex flex-col gap-y-2 pb-10 w-full max-w-full sm:px-5 md:px-10 lg:px-16 2xl:px-48"
         >
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white font-extrabold leading-tight break-words">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white font-extrabold  break-words">
             Perez Musik
           </h1>
           <p className="text-sm sm:text-base md:text-lg">
@@ -39,6 +40,7 @@ const HeroSection = () => {
               Watch Latest Video
             </Link>
           </div>
+          <div className="z-50 w-full r"></div>
         </div>
       </div>
     </section>

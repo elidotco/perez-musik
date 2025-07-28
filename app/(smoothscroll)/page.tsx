@@ -5,6 +5,7 @@ import { Album, HeroSection, UpcomingEvents } from "@/sections";
 import { defineQuery } from "next-sanity";
 import { sanityFetch } from "@/sanity/lib/live";
 import Link from "next/link";
+import Slider from "@/components/Slider";
 
 const EVENTS_QUERY = defineQuery(
   `*[
@@ -27,7 +28,9 @@ export default async function Home() {
     <main className=" bg-black text-white ring">
       <HeroSection />
       <Header />
-      {/* <SimpleSlider /> */}
+      <div className="py-10">
+        <Slider />
+      </div>
       <div className="flex h-1/2 item-center flex-col lg:flex-row ">
         <div className=" w-full lg:w-1/2 px-5 md:px-10 py-20 lg:px-16 2xl:px-26 bg-gray-600 text-xl font-medium flex flex-col gap-y-6">
           <h2>
