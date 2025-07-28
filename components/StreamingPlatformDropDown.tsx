@@ -2,7 +2,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Play } from "lucide-react";
 
-const StreamingPlatformsDropdown = ({ isScrolled }) => {
+const StreamingPlatformsDropdown = ({
+  isScrolled,
+}: {
+  isScrolled: boolean;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
