@@ -47,7 +47,7 @@ const UpcomingEvents: React.FC<UpEProps> = ({ data }) => {
           <div className="mx-auto py-10 w-full items-center justify-center  flex">
             <Link
               href="/events"
-              className="border-2 border-black hover:bg-black hover:text-white cursor-pointer text-black font-bold py-4 px-8 rounded-full capitalize transition-all"
+              className="border-2 border-white hover:bg-white hover:text-black w-1/2 md:w-1/4 text-center cursor-pointer text-white font-bold py-4 px-2 rounded-full transition-all"
             >
               View All Events
             </Link>

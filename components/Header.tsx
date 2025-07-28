@@ -1,73 +1,70 @@
 "use client";
-import React, { useState } from "react";
-import { Geist } from "next/font/google";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Bars3Icon, PlayIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import StreamingPlatformsDropdown from "./StreamingPlatformDropDown";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menu = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "About",
-      path: "/about",
-    },
-    {
-      name: "Events",
-      path: "/events",
-    },
-    {
-      name: "Music",
-      path: "/music",
-    },
-    {
-      name: "Contact",
-      path: "/contact",
-    },
-  ];
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const menu = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Events", path: "/events" },
+    { name: "Music", path: "/music" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  // Scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <header
-        className={`w-full z-50 h-20 bg-white ${isMobileMenuOpen ? "fixed" : "sticky"} top-0 shadow px-0 md:px-10 lg:px-16 flex items-center lg:gap-x-56 justify-between lg:justify-center 2xl:px-20`}
+        className={`w-full z-50 h-20 fixed top-0 transition-all duration-500 px-4 md:px-10 lg:px-16 2xl:px-20 text-black flex items-center justify-between lg:justify-center  gap-56  ${
+          isScrolled
+            ? "bg-black/80 text-white backdrop-blur shadow"
+            : "bg-transparent text-black"
+        }`}
       >
-        {/* the Logo fo the header */}
-        <div className="w-28 h-28 ">
+        {/* Logo */}
+        <div className="w-28 h-28">
           <a href="/">
-            {" "}
             <Image src="/logo.png" alt="Logo" height={100} width={100} />
           </a>
         </div>
 
-        {/* the Logo fo the header */}
-        {/* Menu */}
+        {/* Desktop Menu */}
         <ul className="md:flex hidden gap-6">
-          {menu.map((item) => {
-            return (
-              <li key={item.name} className="cursor-pointer relative group ">
-                <a href={item.path} className="relative">
-                  {" "}
-                  {item.name}
-                </a>
-                <span className="absolute transition-all duration-200 bottom-0 left-0 w-0 bg-black group-hover:w-full h-[2px] "></span>
-              </li>
-            );
-          })}
+          {menu.map((item) => (
+            <li key={item.name} className="cursor-pointer relative group">
+              <a href={item.path} className="relative">
+                {item.name}
+              </a>
+              <span className="absolute transition-all duration-200 bottom-0 left-0 w-0 bg-white group-hover:w-full h-[2px]"></span>
+            </li>
+          ))}
         </ul>
-        <StreamingPlatformsDropdown />
+
+        <div className="hidden md:block">
+          <StreamingPlatformsDropdown isScrolled={isScrolled} />
+        </div>
+
+        {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden p-2 rounded-md cursor-pointer transition-colors"
+          className="md:hidden p-2 rounded-md text-white"
           aria-label="Toggle mobile menu"
         >
           {isMobileMenuOpen ? (
@@ -77,16 +74,17 @@ const Header = () => {
           )}
         </button>
       </header>
+
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-50"
+          className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-70"
           onClick={closeMobileMenu}
         >
           <div
             className="fixed top-20 left-0 right-0 bg-white shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Mobile Menu Items */}
             <ul className="flex flex-col">
               {menu.map((item) => (
                 <li
@@ -95,7 +93,7 @@ const Header = () => {
                 >
                   <a
                     href={item.path}
-                    className="block px-6 py-4 text-lg hover:bg-gray-50 transition-colors"
+                    className="block px-6 py-4 text-lg text-black hover:bg-gray-50"
                     onClick={closeMobileMenu}
                   >
                     {item.name}
@@ -103,10 +101,8 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-
-            {/* Mobile Streaming Platforms Dropdown */}
             <div className="p-6 border-t border-gray-100">
-              <StreamingPlatformsDropdown />
+              <StreamingPlatformsDropdown isScrolled={isScrolled} />
             </div>
           </div>
         </div>

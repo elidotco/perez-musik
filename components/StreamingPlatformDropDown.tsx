@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Play } from "lucide-react";
 
-const StreamingPlatformsDropdown = () => {
+const StreamingPlatformsDropdown = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -107,23 +107,28 @@ const StreamingPlatformsDropdown = () => {
           {/* Your exact play button */}
           <div
             ref={buttonRef}
-            className="p-2 shadow hidden cursor-pointer shadow-black bg-black rounded-full md:flex justify-center transition-all transform hover:scale-105 items-center"
+            className={`p-2 shadow hidden cursor-pointer shadow-black bg-black rounded-full md:flex justify-center transition-all transform hover:scale-105 items-center
+              ${isScrolled ? "bg-white text-black-alt" : ""}`}
             onClick={handleButtonClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Play fontSize={20} color="white" className="w-7" />
+            <Play
+              fontSize={20}
+              color={isScrolled ? "black" : "white"}
+              className="w-7"
+            />
           </div>
 
           {/* Streaming platforms dropdown */}
           {isOpen && (
             <div
               ref={dropdownRef}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-60 bg-white rounded-xl shadow-xl border border-gray-200 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-60 bg-gray-800 rounded-xl shadow-xl border border-gray-800 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wide border-b border-gray-100 mb-2">
+              <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wide border-b border-gray-100 mb-2">
                 Stream Now
               </div>
 

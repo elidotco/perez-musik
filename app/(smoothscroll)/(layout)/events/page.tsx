@@ -113,7 +113,7 @@ const EventsSection = async () => {
       {/* Status Button */}
       <div className="flex-shrink-0">
         {isPast ? (
-          <button className="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-yellow-400 transition-colors">
+          <button className="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-yellow-300 transition-colors">
             Experience
           </button>
         ) : (
@@ -132,7 +132,7 @@ const EventsSection = async () => {
     <>
       {" "}
       <div className="flex w-full relative bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-96">
-        <div className="absolute  inset-0 bg-gradient-to-b from-yellow-400 to-black opacity-50"></div>
+        <div className="absolute  inset-0 bg-gradient-to-b from-yellow-300 to-black opacity-50"></div>
         {/* <Image
             src="/tt.jpg"
             alt="bottom pattern"
