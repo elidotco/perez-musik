@@ -41,7 +41,7 @@ const Header = () => {
         {/* Logo */}
         <div className="w-28 h-28">
           <a href="/">
-            <Image src="/favicon.jpg" alt="Logo" height={100} width={100} />
+            <Image src="/logo.png" alt="Logo" height={100} width={100} />
           </a>
         </div>
 
