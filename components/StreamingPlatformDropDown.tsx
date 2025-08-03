@@ -128,7 +128,7 @@ const StreamingPlatformsDropdown = ({
           {isOpen && (
             <div
               ref={dropdownRef}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-60 bg-gray-800 rounded-xl shadow-xl border border-gray-800 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
+              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-60 bg-black rounded-xl shadow-xl border border-gray-900 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -141,14 +141,14 @@ const StreamingPlatformsDropdown = ({
                   <button
                     key={platform.name}
                     onClick={() => handlePlatformClick(platform)}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 text-left transition-colors ${platform.bgColor} hover:text-gray-900 group`}
+                    className={`w-full flex items-center space-x-3 px-4 py-3 text-left transition-colors ${platform.bgColor} hover:text-white group`}
                   >
                     <div
                       className={`${platform.color} group-hover:scale-110 transition-transform`}
                     >
                       {platform.icon}
                     </div>
-                    <span className="font-medium text-gray-700 group-hover:text-gray-900">
+                    <span className="font-medium text-white group-hover:text-gray-800">
                       {platform.name}
                     </span>
                   </button>

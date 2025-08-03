@@ -39,10 +39,22 @@ const Header = () => {
         }`}
       >
         {/* Logo */}
-        <div className="w-28 h-28">
-          <a href="/">
-            <Image src="/logo.png" alt="Logo" height={100} width={100} />
-          </a>
+        <div className={`w-28 ${isScrolled ? "mt-16" : ""} h-28`}>
+          {isScrolled ? (
+            <a href="/">
+              <Image
+                src="/logo1.png"
+                alt="Logo"
+                height={100}
+                width={50}
+                className=""
+              />
+            </a>
+          ) : (
+            <a href="/">
+              <Image src="/logo.png" alt="Logo" height={100} width={100} />
+            </a>
+          )}
         </div>
 
         {/* Desktop Menu */}
