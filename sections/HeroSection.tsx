@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Slider from "@/components/Slider";
+import { ArrowLongDownIcon } from "@heroicons/react/16/solid";
 
 const HeroSection = () => {
   return (
@@ -20,6 +21,8 @@ const HeroSection = () => {
             Perez Musik is a music minister called to spread the gospel through
             worship as God moves across the earth in these times.
           </p>
+
+          <ArrowLongDownIcon color="white" className="w-20 h-20" />
 
           {/* <div className="flex flex-col sm:flex-row gap-4 w-full">
             <Link

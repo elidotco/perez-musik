@@ -4,6 +4,7 @@ import { defineQuery } from "next-sanity";
 import { sanityFetch } from "@/sanity/lib/live";
 import Image from "next/image";
 import { urlFor } from "../../../../sanity/lib/image";
+import Link from "next/link";
 
 function formatTime(datetime: string | number | Date) {
   return new Date(datetime).toLocaleTimeString("en-US", {
@@ -117,12 +118,12 @@ const EventsSection = async () => {
             Experience
           </button>
         ) : (
-          <button
-            disabled
+          <Link
+            href="https://egotickets.com/events/glorified-2025-his-love-and-kindness"
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Experience
-          </button>
+          </Link>
         )}
       </div>
     </div>
@@ -131,58 +132,49 @@ const EventsSection = async () => {
   return (
     <>
       {" "}
-      <div className="flex w-full relative bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-96">
-        <div className="absolute  inset-0 bg-gradient-to-b from-yellow-300 to-black opacity-50"></div>
-        {/* <Image
-            src="/tt.jpg"
-            alt="bottom pattern"
-            width={1920}
-            height={400}
-            className="w-full h-full object-cover"
-            quality={100}
-            priority
-          /> */}
-      </div>
-      <div className="w-full mx-auto p-8 bg-gray-50 min-h-screen">
-        {/* Upcoming Events Section */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Upcoming Events
-          </h2>
+      <div className="flex w-full relative bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-screen">
+        <div className="w-full relative  bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center mx-auto p-8 pt-48  bg-gray-50 min-h-screen">
+          <div className="absolute   bg-gradient-to-b from-yellow-300 to-black opacity-50"></div>
+          {/* Upcoming Events Section */}
+          <div className="mb-12 z-10">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+              Upcoming Events
+            </h2>
 
-          {upcomingEvents.length > 0 ? (
-            <div className="space-y-4">
-              {upcomingEvents?.map((event) => (
-                <EventCard key={event.name} event={event} isPast={false} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <div className="text-gray-500 text-lg mb-4">
-                No upcoming events scheduled
+            {upcomingEvents.length > 0 ? (
+              <div className="space-y-4">
+                {upcomingEvents?.map((event) => (
+                  <EventCard key={event.name} event={event} isPast={false} />
+                ))}
               </div>
-              <div className="text-gray-400">
-                Check back soon for new announcements!
+            ) : (
+              <div className="text-center py-12">
+                <div className="text-gray-500 text-lg mb-4">
+                  No upcoming events scheduled
+                </div>
+                <div className="text-gray-400">
+                  Check back soon for new announcements!
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        {/* Past Events Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Past Events
-          </h2>
+          {/* Past Events Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+              Past Events
+            </h2>
 
-          {pastEvents.length > 0 ? (
-            <div className="space-y-4 flex max-w-6xl mx-auto flex-col">
-              {pastEvents.map((event) => (
-                <EventCard key={event.id} event={event} isPast={true} />
-              ))}
-            </div>
-          ) : (
-            ""
-          )}
+            {pastEvents.length > 0 ? (
+              <div className="space-y-4 flex max-w-6xl mx-auto flex-col">
+                {pastEvents.map((event) => (
+                  <EventCard key={event.id} event={event} isPast={true} />
+                ))}
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </div>
     </>

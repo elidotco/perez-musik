@@ -59,6 +59,8 @@ export default async function Home() {
       <Album data={releases.data} />
       <UpcomingEvents data={data.data} />
       <div className="py-10">
+        {/* Watch us */}
+        <h3 className="text-center text-2xl">Watch us Worship</h3>
         <Slider />
       </div>
     </main>

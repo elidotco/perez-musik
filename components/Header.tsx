@@ -34,7 +34,7 @@ const Header = () => {
       <header
         className={`w-full z-50 h-20 fixed top-0 transition-all duration-500 px-4 md:px-10 lg:px-16 2xl:px-20 text-black flex items-center justify-between lg:justify-center  gap-56  ${
           isScrolled
-            ? "bg-black/80 text-white backdrop-blur shadow"
+            ? "bg-black/80 text-white backdrop-blur shadow shadow-gray-800"
             : "bg-transparent text-black"
         }`}
       >
