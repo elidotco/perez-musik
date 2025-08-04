@@ -7,20 +7,21 @@ const HeroSection = () => {
   return (
     <section className="w-full h-fit">
       {/* this is the main image on the herosection */}
-      <div className="w-full min-h-screen flex  items-start justify-end  md:bg-fixed bg-[url(/heroimg1.jpg)] bg-center  flex-col text-white bg-cover bg-no-repeat relative">
+      <div className="w-full  flex md:min-h-screen  pt-20 items-start justify-end pb-20 md:bg-fixed bg-[url(/heroimg1.jpg)] bg-center  flex-col text-white bg-cover bg-no-repeat relative">
         <div className="absolute inset-0 bg-gradient-to-b from-green-300 to-black opacity-50"></div>
         <div
           data-aos="fade-up"
-          className="z-10 flex flex-col gap-y-2 pb-10 w-full max-w-full sm:px-5 md:px-10 lg:px-16 2xl:px-48"
+          className="z-10 flex flex-col px-5 gap-y-10 pb-10 w-full max-w-full sm:px-5 md:px-10 lg:px-16 2xl:px-48"
         >
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white font-extrabold  break-words">
-            Perez Musik
+          <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl text-white font-bold  break-words">
+            Spreading God's Love <br /> Through Music
           </h1>
-          <p className="text-sm sm:text-base md:text-lg">
-            Spreading God's Love Through Music
+          <p className="text-sm sm:text-base md:w-2/5 md:text-lg">
+            Perez Musik is a music minister called to spread the gospel through
+            worship as God moves across the earth in these times.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full">
+          {/* <div className="flex flex-col sm:flex-row gap-4 w-full">
             <Link
               href={
                 "https://open.spotify.com/artist/0aoCkJnz41cyF84JmMISzI?si=0zzy_JBhRYu63oPOKMCJgg"
@@ -39,8 +40,7 @@ const HeroSection = () => {
             >
               Watch Latest Video
             </Link>
-          </div>
-          <div className="z-50 w-full r"></div>
+          </div> */}
         </div>
       </div>
     </section>
