@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Slider from "@/components/Slider";
 import { ArrowLongDownIcon } from "@heroicons/react/16/solid";
+import HomepageArrow from "@/components/HomepageArrow";
 
 const HeroSection = () => {
   return (
@@ -22,28 +23,9 @@ const HeroSection = () => {
             worship as God moves across the earth in these times.
           </p>
 
-          <ArrowLongDownIcon color="white" className="w-20 h-20" />
-
-          {/* <div className="flex flex-col sm:flex-row gap-4 w-full">
-            <Link
-              href={
-                "https://open.spotify.com/artist/0aoCkJnz41cyF84JmMISzI?si=0zzy_JBhRYu63oPOKMCJgg"
-              }
-              rel="noopener noreferrer"
-              target="_blank"
-              className="bg-green-300 hover:bg-green-500 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all transform hover:scale-105 cursor-pointer text-sm sm:text-base w-full sm:w-auto"
-            >
-              Listen Now
-            </Link>
-            <Link
-              href="https://youtu.be/Zr8yfNWLuZ4?si=-UntuMFed375t5vq"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="border-2 border-white hover:bg-white hover:text-black cursor-pointer text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all text-sm sm:text-base w-full sm:w-auto"
-            >
-              Watch Latest Video
-            </Link>
-          </div> */}
+          {/* Icons */}
+          <HomepageArrow />
+          {/* Icons */}
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import { AlbumShowcase } from "@/components";
-import { AlbumData, AlbumShowcaseProps } from "@/components/AlbumShowcase";
+import { AlbumData } from "@/components/AlbumShowcase";
 import { sanityFetch } from "@/sanity/lib/live";
-import { AlbumProps } from "@/sections/Album";
 import { defineQuery } from "next-sanity";
 import React from "react";
 
@@ -14,7 +13,7 @@ const Home = async () => {
   const { data } = await sanityFetch({ query: RELEASES_QUERY });
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen bg-black">
       <div className="flex mb-20 w-full relative bg-[url(/forground.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-96">
         <div className="absolute  inset-0 bg-gradient-to-b from-yellow-300 to-black opacity-50"></div>
       </div>

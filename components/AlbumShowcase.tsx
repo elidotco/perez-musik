@@ -34,7 +34,7 @@ export interface AlbumShowcaseProps {
 
 const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br  p-4 md:px-10">
+    <div className="min-h-screen  bg-gradient-to-br  p-4 md:px-10">
       <div className=" w-full md:max-w-7xl md:mx-auto">
         <div className="flex flex-col items-center md:items-start md:flex-row gap-10">
           {/* Album Cover Section */}
@@ -48,7 +48,7 @@ const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
           </div>
 
           {/* Album Info and Player Section */}
-          <div className="space-y-8   bg-gray-100 py-10 md:px-16 ">
+          <div className="space-y-8 shadow-md shadow-gray-800  bg-gray-100 py-10 md:px-16 ">
             {/* Album Title */}
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -66,7 +66,6 @@ const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
                 src={data.spotify}
                 width="100%"
                 height="352"
-                frameBorder="0"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
