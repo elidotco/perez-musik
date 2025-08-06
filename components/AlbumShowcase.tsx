@@ -49,7 +49,7 @@ const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
           </div>
 
           {/* Album Info and Player Section */}
-          <div className="space-y-8 shadow-md shadow-gray-800  bg-gray-100 py-10 md:px-16 w-2/4 ">
+          <div className="space-y-8 shadow-md shadow-gray-800  bg-gray-100 py-10 md:px-16 w-full px-2 md:w-2/4 ">
             {/* Album Title */}
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">
