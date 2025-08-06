@@ -39,7 +39,7 @@ const Album: React.FC<AlbumProps> = ({ data }) => {
           alt=""
           width={450}
           height={650}
-          className="object-cover w-4/5 "
+          className="object-cover w-full md:w-4/5 "
         />
       </div>
       <div className="flex h-auto flex-col items-center lg:items-start px-5 md:px-20 lg:px-16 2xl:px-26  py-5 md:py-20 gap-y-5 w-full md:w-3/5 justify-center  bg-[#121212]   ring shadow-xl ring-gray-900/5">
