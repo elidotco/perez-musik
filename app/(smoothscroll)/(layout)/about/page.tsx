@@ -38,7 +38,7 @@ const portableTextComponents: PortableTextComponents = {
       <h3 className="text-2xl font-medium mb-2">{children}</h3>
     ),
     normal: ({ children }) => (
-      <p className="mb-4 text-gray-700 leading-relaxed">{children}</p>
+      <p className="mb-4 text-gray-200 leading-relaxed">{children}</p>
     ),
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-blue-500 pl-4 italic my-4">
@@ -85,7 +85,7 @@ const ABOUT_QUERY = defineQuery(
 const Home = async () => {
   const { data } = await sanityFetch({ query: ABOUT_QUERY });
   return (
-    <section className="min-h-screen   w-full">
+    <section className="min-h-screen bg-black text-white  py-36  w-full">
       {/* About Section */}
       <div className="flex w-full justify-center md:flex-row flex-col-reverse  h-auto">
         <div className="md:w-1/3 w-full">

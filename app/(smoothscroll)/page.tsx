@@ -17,11 +17,17 @@ const RELEASES_QUERY = defineQuery(
   _type=="releases" 
   ]|order(date desc)[0] {coverImage, comments, title,date, type}`
 );
+const VIDEOS_QUERY = defineQuery(
+  `*[
+  _type=="vidoeslink" 
+  ]|order(date desc) {link}`
+);
 
 export default async function Home() {
-  const [data, releases] = await Promise.all([
+  const [data, releases, vidlinks] = await Promise.all([
     sanityFetch({ query: EVENTS_QUERY }),
     sanityFetch({ query: RELEASES_QUERY }),
+    sanityFetch({ query: VIDEOS_QUERY }),
   ]);
 
   return (
@@ -61,7 +67,7 @@ export default async function Home() {
       <div className="py-10">
         {/* Watch us */}
         <h3 className="text-center text-2xl">Watch us Worship</h3>
-        <Slider />
+        <Slider data={vidlinks.data} />
       </div>
     </main>
   );

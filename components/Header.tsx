@@ -64,7 +64,9 @@ const Header = () => {
               <a href={item.path} className="relative">
                 {item.name}
               </a>
-              <span className="absolute transition-all duration-200 bottom-0 left-0 w-0 bg-white group-hover:w-full h-[2px]"></span>
+              <span
+                className={`absolute transition-all duration-200 bottom-0 left-0 w-0 ${isScrolled ? " bg-white" : " bg-black"} group-hover:w-full h-[2px]`}
+              ></span>
             </li>
           ))}
         </ul>
@@ -94,7 +96,7 @@ const Header = () => {
           onClick={closeMobileMenu}
         >
           <div
-            className="fixed top-20 left-0 right-0 bg-white shadow-lg"
+            className="fixed top-20 left-0 right-0 bg-black text-white shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col">
@@ -105,7 +107,7 @@ const Header = () => {
                 >
                   <a
                     href={item.path}
-                    className="block px-6 py-4 text-lg text-black hover:bg-gray-50"
+                    className="block px-6 py-4 text-lg text-white hover:bg-gray-50"
                     onClick={closeMobileMenu}
                   >
                     {item.name}

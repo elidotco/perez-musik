@@ -65,27 +65,18 @@ export default function Home() {
 
   return (
     <main className="bg-fixed min-h-screen">
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="min-h-screen bg-[url(/double-bubble-dark.webp)] bg-gradient-to-br from-gray-50 to-gray-100">
         {/* Header */}
         <div className="flex w-full relative bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-96">
-          <div className="absolute  inset-0 bg-gradient-to-b from-yellow-300 to-black opacity-50"></div>
-          {/* <Image
-            src="/tt.jpg"
-            alt="bottom pattern"
-            width={1920}
-            height={400}
-            className="w-full h-full object-cover"
-            quality={100}
-            priority
-          /> */}
+          <div className="absolute  inset-0 bg-gradient-to-b from-green-300 to-black opacity-50"></div>
         </div>
-        <main className="max-w-6xl mx-auto px-6 py-12">
+        <main className="max-w-6xl   mx-auto px-6 py-12">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-100 mb-4">
               Let's Connect
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto">
               Whether you're looking to book Perez Musik for an event,
               collaborate on music, or simply want to share how his ministry has
               impacted your life, we'd love to hear from you.
@@ -131,7 +122,7 @@ export default function Home() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-300 focus:border-green-300 transition-all duration-200"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -150,7 +141,7 @@ export default function Home() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-300 focus:border-green-300 transition-all duration-200"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -171,7 +162,7 @@ export default function Home() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-300 focus:border-green-300 transition-all duration-200"
                         placeholder="+233 XX XXX XXXX"
                       />
                     </div>
@@ -189,7 +180,7 @@ export default function Home() {
                         required
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-300 focus:border-green-300 transition-all duration-200"
                       >
                         <option value="">Select a subject</option>
                         <option value="booking">Event Booking Inquiry</option>
@@ -219,7 +210,7 @@ export default function Home() {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-300 focus:border-yellow-300 transition-all duration-200 resize-y"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-300 focus:border-green-300 transition-all duration-200 resize-y"
                       placeholder="Please share your message, inquiry details, or testimony..."
                     />
                   </div>
@@ -231,7 +222,7 @@ export default function Home() {
                     className={`w-full font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg ${
                       isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
-                        : "bg-yellow-300 hover:bg-yellow-500 text-black"
+                        : "bg-green-300 hover:bg-green-500 text-black"
                     }`}
                   >
                     {isSubmitting ? (

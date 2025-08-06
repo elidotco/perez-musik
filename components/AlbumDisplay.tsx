@@ -43,22 +43,22 @@ const AlbumShowcase = () => {
           {/* Album Cover Section */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-96 h-96 bg-gradient-to-br from-yellow-300 via-orange-500 to-blue-600 rounded-lg shadow-2xl overflow-hidden">
+              <div className="w-96 h-96 bg-gradient-to-br from-green-300 via-orange-500 to-blue-600 rounded-lg shadow-2xl overflow-hidden">
                 {/* Album artwork placeholder with harvest theme */}
-                <div className="w-full h-full relative bg-gradient-to-b from-sky-400 via-yellow-300 to-orange-400">
+                <div className="w-full h-full relative bg-gradient-to-b from-sky-400 via-green-300 to-orange-400">
                   {/* Stylized sickle and wheat design */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative">
                       {/* Wheat stalks */}
                       <div className="absolute -right-8 top-4">
-                        <div className="w-2 h-32 bg-yellow-600 rounded-full transform rotate-12"></div>
-                        <div className="w-2 h-28 bg-yellow-600 rounded-full transform rotate-45 absolute -left-1 top-2"></div>
-                        <div className="w-2 h-30 bg-yellow-600 rounded-full transform -rotate-12 absolute left-2 top-1"></div>
+                        <div className="w-2 h-32 bg-green-600 rounded-full transform rotate-12"></div>
+                        <div className="w-2 h-28 bg-green-600 rounded-full transform rotate-45 absolute -left-1 top-2"></div>
+                        <div className="w-2 h-30 bg-green-600 rounded-full transform -rotate-12 absolute left-2 top-1"></div>
                       </div>
 
                       {/* Decorative sickle shape */}
-                      <div className="w-24 h-24 border-8 border-yellow-800 rounded-full border-r-transparent border-t-transparent transform rotate-45"></div>
-                      <div className="w-4 h-16 bg-yellow-800 rounded-full absolute -bottom-8 left-10 transform rotate-12"></div>
+                      <div className="w-24 h-24 border-8 border-green-800 rounded-full border-r-transparent border-t-transparent transform rotate-45"></div>
+                      <div className="w-4 h-16 bg-green-800 rounded-full absolute -bottom-8 left-10 transform rotate-12"></div>
                     </div>
                   </div>
 
@@ -99,7 +99,7 @@ const AlbumShowcase = () => {
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-300 to-orange-500 rounded-lg flex-shrink-0"></div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-300 to-orange-500 rounded-lg flex-shrink-0"></div>
                   <div>
                     <h3 className="text-xl font-bold">The Great Commission</h3>
                     <p className="text-gray-400">Preview • Dunsin Oyekan</p>

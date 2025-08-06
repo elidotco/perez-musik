@@ -114,7 +114,7 @@ const EventsSection = async () => {
       {/* Status Button */}
       <div className="flex-shrink-0">
         {isPast ? (
-          <button className="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-yellow-300 transition-colors">
+          <button className="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-green-300 transition-colors">
             Experience
           </button>
         ) : (
@@ -133,11 +133,13 @@ const EventsSection = async () => {
     <>
       {" "}
       <div className="flex w-full relative bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center h-screen">
-        <div className="w-full relative  bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center mx-auto p-8 pt-48  bg-gray-50 min-h-screen">
-          <div className="absolute   bg-gradient-to-b from-yellow-300 to-black opacity-50"></div>
+        <div className="w-full relative  bg-[url(/tt.jpg)] bg-fixed bg-no-repeat bg-cover bg-center mx-auto p-8 pt-48 min-h-screen">
+          {/* Gradient Overlay */}
+          {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-green-300/60 via-black/70 to-black/90 z-0 pointer-events-none" /> */}
+
           {/* Upcoming Events Section */}
           <div className="mb-12 z-10">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            <h2 className="text-3xl font-bold text-center text-gray-100 mb-8">
               Upcoming Events
             </h2>
 
@@ -161,7 +163,7 @@ const EventsSection = async () => {
 
           {/* Past Events Section */}
           <div>
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            <h2 className="text-3xl z-10 font-bold text-center text-gray-100 mb-8">
               Past Events
             </h2>
 

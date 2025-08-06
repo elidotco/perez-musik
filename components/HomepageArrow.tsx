@@ -45,11 +45,11 @@ const HomepageArrow = () => {
       </div>
 
       {/* Additional animated elements */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-translate-y-6">
+      <div className="absolute top-0  transform -translate-x-1/2 -translate-y-8 opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-translate-y-6">
         <div className="w-1 h-4 bg-white/60 rounded-full animate-pulse" />
       </div>
 
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:-translate-y-8">
+      <div className="absolute top-0  transform -translate-x-1/2 -translate-y-12 opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:-translate-y-8">
         <div className="w-0.5 h-3 bg-white/40 rounded-full animate-pulse" />
       </div>
     </div>

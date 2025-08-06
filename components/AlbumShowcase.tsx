@@ -38,17 +38,18 @@ const AlbumShowcase: React.FC<AlbumShowcaseProps> = ({ data }) => {
       <div className=" w-full md:max-w-7xl md:mx-auto">
         <div className="flex flex-col items-center md:items-start md:flex-row gap-10">
           {/* Album Cover Section */}
-          <div className="md:w-3/4">
+          <div className="md:w-1/3">
             <Image
               src={urlFor(data.coverImage).url()}
               alt="album covers"
               width={1980}
               height={1080}
+              className=""
             />
           </div>
 
           {/* Album Info and Player Section */}
-          <div className="space-y-8 shadow-md shadow-gray-800  bg-gray-100 py-10 md:px-16 ">
+          <div className="space-y-8 shadow-md shadow-gray-800  bg-gray-100 py-10 md:px-16 w-2/4 ">
             {/* Album Title */}
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">
